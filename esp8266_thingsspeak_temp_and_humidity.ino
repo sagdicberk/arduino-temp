@@ -4,9 +4,9 @@
 #define TX 3
 #define dht_apin 11 // Analog Pin sensor is connected to
 dht11 dhtObject;
-String AP = "cidgas";       // AP NAME
-String PASS = "berk1234"; // AP PASSWORD
-String API = "K0EK320G6MRBX0XB";   // Write API KEY
+String AP = "";       
+String PASS = ""; 
+String API = "";   // Write API KEY
 String HOST = "api.thingspeak.com";
 String PORT = "80";
 int countTrueCommand;
@@ -65,8 +65,8 @@ void sendCommand(String command, int maxTime, char readReplay[]) {
   Serial.print(" ");
   while(countTimeCommand < (maxTime*1))
   {
-    esp8266.println(command);//at+cipsend
-    if(esp8266.find(readReplay))//ok
+    esp8266.println(command); 
+    if(esp8266.find(readReplay))
     {
       found = true;
       break;
